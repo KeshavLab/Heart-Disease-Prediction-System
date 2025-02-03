@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Heart Disease Prediction System</h2>
+    <form action="/predict" method="post">
+        <!-- Sex (Male=1, Female=0) -->
+        <label>Sex (Male=1, Female=0):</label>
+        <input type="number" name="Sex_male" required><br>
+
+        <!-- Age -->
+        <label>Age:</label>
+        <input type="number" name="age" required><br>
+
+        <!-- Cigarettes Per Day -->
+        <label>Cigarettes Per Day:</label>
+        <input type="number" name="cigsPerDay" required><br>
+
+        <!-- Total Cholesterol -->
+        <label>Total Cholesterol:</label>
+        <input type="number" name="totChol" required><br>
+
+        <!-- Systolic BP -->
+        <label>Systolic BP:</label>
+        <input type="number" name="sysBP" required><br>
+
+        <!-- Glucose Level -->
+        <label>Glucose Level:</label>
+        <input type="number" name="glucose" required><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Predict</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
